@@ -14,7 +14,17 @@ import { trustedOrigin } from './middlewares/origin.middleware.js';
 const app = express();
 app.disable('x-powered-by');
 app.use(helmet({ crossOriginResourcePolicy: false }));
-const origins = (process.env.CLIENT_URL || 'http://localhost:5173').split(',').map(x => x.trim());
+app.use(
+  cors({
+    origin: [
+      "https://dakshayani-restaurant-mn1k.vercel.app",
+      "http://localhost:5173",
+    ],
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 app.use(cors({ origin: (origin, callback) => !origin || origins.includes(origin) ? callback(null, true) : callback(new Error('CORS origin not allowed')), credentials: true }));
 app.use(express.json({ limit: '1mb' }));
 app.use(cookieParser());
