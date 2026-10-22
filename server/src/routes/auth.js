@@ -1,0 +1,11 @@
+import { Router } from 'express';
+import * as controller from '../controllers/auth.controller.js';
+import { requireAuth } from '../middlewares/auth.middleware.js';
+const router = Router();
+router.post('/register', controller.post_register);
+router.post('/login', controller.post_login);
+router.post('/logout', requireAuth, controller.post_logout);
+router.get('/me', requireAuth, controller.get_me);
+router.post('/forgot-password', controller.post_forgot_password);
+router.post('/reset-password', controller.post_reset_password);
+export default router;

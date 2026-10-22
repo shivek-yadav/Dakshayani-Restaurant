@@ -1,0 +1,4 @@
+import mongoose from 'mongoose';
+const { Schema, model } = mongoose;
+const config = { timestamps: true };
+export const SiteSettings = model('SiteSettings', new Schema({ key: { type: String, unique: true, default: 'primary' }, restaurantName: { type: String, default: 'Dakshayani' }, tagline: String, phone: String, email: String, address: String, city: String, mapUrl: String, instagram: String, facebook: String, openingHours: [{ day: String, open: String, close: String, closed: Boolean }], bookingEnabled: { type: Boolean, default: true }, orderingEnabled: { type: Boolean, default: true }, deliveryEnabled: { type: Boolean, default: false }, deliveryFee: { type: Number, default: 50 }, reservationMaxGuests: { type: Number, default: 12 }, minReservationLeadHours: { type: Number, default: 2 } }, config));

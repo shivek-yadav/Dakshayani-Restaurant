@@ -1,0 +1,5 @@
+import { NavLink, useNavigate, Outlet } from 'react-router-dom';
+import { Package, CalendarDays, UserRound, LogOut } from 'lucide-react';
+import { useApp } from '../../../context/AppContext';
+import { PageHero } from '../../../components/UI';
+export function AccountLayout() { const { user, logout } = useApp(), navigate = useNavigate(); return <><PageHero eyebrow="YOUR PERSONAL SPACE" title="My Account" description="Your orders, reservations and profile — all in one place."/><section className="section section-cream"><div className="container account-layout"><aside className="account-sidebar"><div className="account-user-icon"><UserRound size={26}/></div><h3>{user.name}</h3><p>{user.email}</p><nav><NavLink end to="/account"><UserRound size={17}/> Profile</NavLink><NavLink to="/account/orders"><Package size={17}/> My Orders</NavLink><NavLink to="/account/bookings"><CalendarDays size={17}/> Reservations</NavLink><button onClick={async () => { await logout(); navigate('/'); }}><LogOut size={17}/> Sign Out</button></nav></aside><div className="account-main"><Outlet /></div></div></section></>; }

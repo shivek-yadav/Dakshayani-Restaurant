@@ -1,0 +1,4 @@
+import mongoose from 'mongoose';
+const { Schema, model } = mongoose;
+const config = { timestamps: true };
+export const Booking = model('Booking', new Schema({ bookingNumber: { type: String, unique: true, required: true }, customer: { type: Schema.Types.ObjectId, ref: 'User', required: true }, name: { type: String, required: true }, email: { type: String, required: true }, phone: { type: String, required: true }, date: { type: String, required: true }, time: { type: String, required: true }, guests: { type: Number, required: true, min: 1, max: 20 }, occasion: { type: String, default: '' }, notes: { type: String, default: '' }, status: { type: String, enum: ['pending', 'confirmed', 'rejected', 'cancelled', 'completed'], default: 'pending' }, adminNote: { type: String, default: '' } }, config));

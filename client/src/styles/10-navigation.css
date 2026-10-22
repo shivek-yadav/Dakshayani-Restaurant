@@ -1,0 +1,174 @@
+/* public header */
+.topbar {
+    height:33px;
+    background:var(--wine-deep);
+    color:#d7c2c2;
+    font-size:11px
+}
+.topbar-inner {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:100%
+}
+.topbar-inner span,.topbar-inner a {
+    display:flex;
+    align-items:center;
+    gap:7px
+}
+.topbar-inner svg {
+    color:var(--gold)
+}
+.site-header {
+    position:sticky;
+    top:0;
+    z-index:40;
+    background:#fffdf9;
+    box-shadow:0 1px 9px #29121a0d
+}
+.nav-inner {
+    height:86px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:22px
+}
+.brand {
+    display:flex;
+    gap:12px;
+    align-items:center;
+    flex-shrink:0
+}
+.brand-emblem {
+    width:46px;
+    height:46px;
+    border:1.5px solid var(--gold);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--wine);
+    font:700 30px Georgia;
+    position:relative
+}
+.brand-emblem span {
+    font-size:11px;
+    color:var(--gold);
+    position:absolute;
+    bottom:3px;
+    right:3px
+}
+.brand-copy {
+    display:flex;
+    flex-direction:column
+}
+.brand-copy strong {
+    font:600 22px 'Playfair Display',serif;
+    letter-spacing:2px;
+    color:var(--wine);
+    line-height:1
+}
+.brand-copy small {
+    font-size:7.2px;
+    letter-spacing:2px;
+    color:#9e866c;
+    margin-top:8px;
+    font-weight:700
+}
+.main-nav {
+    display:flex;
+    align-items:center;
+    gap:29px
+}
+.main-nav a {
+    font-size:12px;
+    font-weight:700;
+    color:#5b4b4a;
+    white-space:nowrap;
+    transition:color .2s
+}
+.main-nav a:hover,.main-nav a.active {
+    color:var(--gold-dark)
+}
+.nav-actions {
+    display:flex;
+    align-items:center;
+    gap:20px
+}
+.nav-icon {
+    border:0;
+    background:none;
+    padding:4px;
+    color:var(--wine);
+    display:flex;
+    align-items:center;
+    justify-content:center
+}
+.cart-icon {
+    position:relative
+}
+.cart-badge {
+    position:absolute;
+    top:-7px;
+    right:-9px;
+    background:var(--gold);
+    border-radius:50%;
+    width:17px;
+    height:17px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:9px;
+    font-weight:800
+}
+.btn-nav {
+    background:var(--wine);
+    color:white;
+    min-height:42px;
+    padding:0 19px;
+    font-size:11px
+}
+.btn-nav:hover {
+    background:var(--wine-soft)
+}
+.account-pop {
+    position:relative
+}
+.account-dropdown {
+    position:absolute;
+    top:36px;
+    right:-15px;
+    width:195px;
+    background:white;
+    box-shadow:var(--shadow);
+    border:1px solid var(--border);
+    padding:10px;
+    z-index:50;
+    display:flex;
+    flex-direction:column
+}
+.dropdown-name {
+    padding:9px 8px;
+    color:var(--wine);
+    font-weight:800;
+    font-size:13px;
+    border-bottom:1px solid var(--border)
+}
+.account-dropdown a,.account-dropdown button {
+    padding:10px 8px;
+    border:0;
+    background:none;
+    font-size:12px;
+    color:#555;
+    text-align:left;
+    display:flex;
+    gap:8px;
+    align-items:center
+}
+.account-dropdown a:hover,.account-dropdown button:hover {
+    background:var(--cream)
+}
+.mobile-toggle,.mobile-book {
+    display:none
+}

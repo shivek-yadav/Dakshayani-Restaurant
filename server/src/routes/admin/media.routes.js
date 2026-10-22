@@ -1,0 +1,10 @@
+import { Router } from 'express';
+import { requireAuth, requireAdmin } from '../../middlewares/auth.middleware.js';
+import multer from 'multer';
+import { httpError } from '../../lib/utils.js';
+const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 5 * 1024 * 1024 }, fileFilter: (req, file, cb) => ['image/jpeg', 'image/png', 'image/webp', 'image/avif'].includes(file.mimetype) ? cb(null, true) : cb(httpError(400, 'Unsupported image type')) });
+import * as controller from '../../controllers/admin/media.controller.js';
+const router = Router();
+router.use(requireAuth, requireAdmin);
+router.post('/upload', upload.single('image'), controller.post_upload);
+export default router;

@@ -1,0 +1,160 @@
+/* food */
+.food-grid {
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:24px
+}
+.food-card {
+    background:white;
+    box-shadow:0 5px 25px #44322608;
+    border:1px solid #efe8dd;
+    transition:transform .2s,box-shadow .2s
+}
+.food-card:hover {
+    transform:translateY(-5px);
+    box-shadow:var(--shadow)
+}
+.food-image-wrap {
+    height:220px;
+    position:relative;
+    overflow:hidden;
+    background:#eae0d5
+}
+.food-image-wrap img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .4s
+}
+.food-card:hover .food-image-wrap img {
+    transform:scale(1.04)
+}
+.food-tags {
+    position:absolute;
+    top:13px;
+    left:13px;
+    display:flex;
+    gap:6px;
+    flex-wrap:wrap
+}
+.food-tag {
+    background:#fffef5eb;
+    border-radius:3px;
+    padding:5px 8px;
+    display:inline-flex;
+    align-items:center;
+    gap:3px;
+    font-size:9px;
+    font-weight:800
+}
+.food-tag.veg {
+    color:#267b3c
+}
+.food-tag.nonveg {
+    color:#a14d2e
+}
+.food-tag.best {
+    background:var(--wine);
+    color:white
+}
+.food-body {
+    padding:24px 21px 18px
+}
+.food-overline {
+    font-size:9px;
+    letter-spacing:1.3px;
+    text-transform:uppercase;
+    font-weight:800;
+    color:var(--gold-dark)
+}
+.food-body h3 {
+    color:var(--wine);
+    font-size:20px;
+    margin:10px 0;
+    font-weight:600;
+    line-height:1.2;
+    min-height:49px
+}
+.food-body p {
+    font-size:12px;
+    line-height:1.8;
+    height:64px;
+    overflow:hidden;
+    margin-bottom:20px
+}
+.food-bottom {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-top:1px solid var(--border);
+    padding-top:15px
+}
+.food-bottom strong {
+    font-size:18px;
+    color:var(--wine)
+}
+.icon-add {
+    border:1px solid var(--gold);
+    background:#fcf7eb;
+    color:var(--wine);
+    display:flex;
+    gap:5px;
+    align-items:center;
+    font-size:11px;
+    font-weight:700;
+    padding:9px 11px
+}
+.icon-add:hover {
+    background:var(--gold)
+}
+.menu-controls {
+    display:flex;
+    justify-content:space-between;
+    gap:23px;
+    align-items:center;
+    flex-wrap:wrap;
+    margin-bottom:26px
+}
+.category-filters,.gallery-filters {
+    display:flex;
+    gap:9px;
+    flex-wrap:wrap
+}
+.category-filters button,.gallery-filters button {
+    background:white;
+    border:1px solid var(--border);
+    padding:11px 15px;
+    font-size:12px;
+    color:#635959;
+    font-weight:600
+}
+.category-filters button.active,.gallery-filters button.active,.category-filters button:hover,.gallery-filters button:hover {
+    background:var(--wine);
+    border-color:var(--wine);
+    color:white
+}
+.menu-search {
+    display:flex;
+    align-items:center;
+    gap:11px;
+    border:1px solid var(--border);
+    background:white;
+    padding:0 13px;
+    min-height:43px;
+    color:var(--gold-dark)
+}
+.menu-search input {
+    border:0;
+    outline:0;
+    min-width:170px;
+    font-size:12px
+}
+.result-label {
+    font-size:12px;
+    color:var(--muted);
+    margin:5px 0 22px
+}
+.gallery-filters {
+    justify-content:center;
+    margin-bottom:35px
+}

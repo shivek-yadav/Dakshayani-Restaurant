@@ -1,0 +1,3 @@
+import { Loading, Empty, useFetch } from '../../../components/UI';
+import { safeDate, AdminHeading, Card, AdminTable, text } from '../components/AdminShared';
+export function AdminActivity() { const { data, loading, error } = useFetch('/admin/activity'); return <><AdminHeading title="Activity Log" subtitle="Recent administrative updates and changes."/><Card title="Recent Activity">{loading ? <Loading /> : error ? <Empty text={error}/> : <AdminTable rows={data} columns={[{ label: 'When', render: x => safeDate(x.createdAt) }, { label: 'Actor', render: x => x.actor?.name || 'System' }, { key: 'action', label: 'Action' }, { key: 'entity', label: 'Module' }, { key: 'details', label: 'Details' }]}/>}</Card></>; }

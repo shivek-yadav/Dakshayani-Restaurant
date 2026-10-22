@@ -1,0 +1,14 @@
+import { Router } from 'express';
+import * as controller from '../controllers/customer.controller.js';
+import { requireAuth, requireCustomer } from '../middlewares/auth.middleware.js';
+const router = Router();
+router.use(['/account', '/orders', '/bookings'], requireAuth, requireCustomer);
+router.get('/account', controller.get_account);
+router.patch('/account', controller.patch_account);
+router.get('/orders/my', controller.get_orders_my);
+router.get('/orders/my/:id', controller.get_orders_my_id);
+router.post('/orders', controller.post_orders);
+router.get('/bookings/my', controller.get_bookings_my);
+router.post('/bookings', controller.post_bookings);
+router.patch('/bookings/my/:id/cancel', controller.patch_bookings_my_id_cancel);
+export default router;

@@ -1,0 +1,4 @@
+import mongoose from 'mongoose';
+const { Schema, model } = mongoose;
+const config = { timestamps: true };
+export const MenuItem = model('MenuItem', new Schema({ name: { type: String, required: true }, slug: { type: String, unique: true, required: true }, description: { type: String, required: true }, price: { type: Number, required: true, min: 0 }, category: { type: Schema.Types.ObjectId, ref: 'Category', required: true }, image: { type: String, default: '' }, imageFileId: { type: String, default: '' }, vegetarian: { type: Boolean, default: true }, featured: { type: Boolean, default: false }, popular: { type: Boolean, default: false }, spicy: { type: Boolean, default: false }, available: { type: Boolean, default: true }, published: { type: Boolean, default: true }, prepMinutes: { type: Number, default: 25 } }, config));

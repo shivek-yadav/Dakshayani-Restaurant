@@ -1,0 +1,33 @@
+import { Router } from 'express';
+import { wrap } from '../../lib/utils.js';
+import { catalogConfig } from '../../services/catalog.config.js';
+import { catalogHandlers } from '../../controllers/admin/catalog.controller.js';
+import { requireAuth, requireAdmin } from '../../middlewares/auth.middleware.js';
+import authRoutes from './auth.routes.js';
+import ordersRoutes from './orders.routes.js';
+import bookingsRoutes from './bookings.routes.js';
+import customersRoutes from './customers.routes.js';
+import inquiriesRoutes from './inquiries.routes.js';
+import contentRoutes from './content.routes.js';
+import settingsRoutes from './settings.routes.js';
+import dashboardRoutes from './dashboard.routes.js';
+import mediaRoutes from './media.routes.js';
+const router = Router();
+router.use(authRoutes);
+router.use(requireAuth, requireAdmin);
+for (const [name, config] of Object.entries(catalogConfig)) {
+    const handlers = catalogHandlers(name, config);
+    router.get(`/${name}`, wrap(handlers.list));
+    router.post(`/${name}`, wrap(handlers.create));
+    router.patch(`/${name}/:id`, wrap(handlers.update));
+    router.delete(`/${name}/:id`, wrap(handlers.remove));
+}
+router.use(ordersRoutes);
+router.use(bookingsRoutes);
+router.use(customersRoutes);
+router.use(inquiriesRoutes);
+router.use(contentRoutes);
+router.use(settingsRoutes);
+router.use(dashboardRoutes);
+router.use(mediaRoutes);
+export default router;

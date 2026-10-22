@@ -1,0 +1,432 @@
+/* breakpoints */
+@media(max-width:1150px) {
+    .main-nav {
+        gap:16px
+    }
+    .nav-actions {
+        gap:13px
+    }
+    .brand-copy strong {
+        font-size:18px
+    }
+    .brand-copy small {
+        font-size:6.5px
+    }
+    .split-story {
+        gap:65px
+    }
+    .food-grid {
+        grid-template-columns:repeat(3,1fr)
+    }
+    .admin-stats {
+        grid-template-columns:repeat(2,1fr)
+    }
+}
+@media(max-width:900px) {
+    .container {
+        width:min(100% - 36px,760px)
+    }
+    .topbar-inner span:nth-child(2) {
+        display:none
+    }
+    .main-nav {
+        display:none;
+        position:absolute;
+        top:100%;
+        left:0;
+        right:0;
+        background:#fffdf9;
+        box-shadow:0 15px 25px #0001;
+        padding:20px 26px;
+        flex-direction:column;
+        align-items:start;
+        gap:22px
+    }
+    .main-nav.open {
+        display:flex
+    }
+    .main-nav .mobile-book {
+        display:block
+    }
+    .mobile-toggle {
+        display:flex;
+        border:0;
+        background:none;
+        color:var(--wine)
+    }
+    .btn-nav {
+        display:none
+    }
+    .nav-inner {
+        height:75px
+    }
+    .home-hero,.hero-container {
+        min-height:570px
+    }
+    .hero-side-note {
+        display:none
+    }
+    .split-story,.booking-layout,.contact-layout,.feature-inner,.faq-layout {
+        grid-template-columns:1fr;
+        gap:50px
+    }
+    .story-visual {
+        max-width:580px
+    }
+    .food-grid {
+        grid-template-columns:repeat(2,1fr)
+    }
+    .gallery-preview {
+        grid-template-rows:150px 150px
+    }
+    .footer-grid {
+        grid-template-columns:repeat(2,1fr)
+    }
+    .auth-wrap {
+        grid-template-columns:1fr
+    }
+    .auth-side {
+        min-height:290px;
+        padding:45px
+    }
+    .auth-side h2 {
+        font-size:35px
+    }
+    .auth-panel {
+        padding:25px 12% 70px
+    }
+    .auth-form-box {
+        margin-top:35px
+    }
+    .admin-sidebar {
+        transform:translateX(-100%);
+        transition:transform .2s
+    }
+    .admin-sidebar.show {
+        transform:translateX(0)
+    }
+    .admin-shade.show {
+        display:block;
+        position:fixed;
+        inset:0;
+        background:#0008;
+        z-index:65
+    }
+    .admin-workspace {
+        margin-left:0
+    }
+    .admin-mobile-trigger {
+        display:grid;
+        place-items:center;
+        background:none;
+        border:0;
+        color:var(--wine)
+    }
+    .admin-topbar {
+        padding:0 23px
+    }
+    .admin-dash-grid {
+        grid-template-columns:1fr
+    }
+}
+@media(max-width:650px) {
+    .container {
+        width:calc(100% - 32px)
+    }
+    .section {
+        padding:67px 0
+    }
+    .topbar {
+        height:29px
+    }
+    .topbar-inner {
+        justify-content:center
+    }
+    .topbar-inner span:first-child {
+        display:none
+    }
+    .brand-emblem {
+        width:36px;
+        height:36px;
+        font-size:23px
+    }
+    .brand-copy strong {
+        font-size:17px
+    }
+    .brand-copy small {
+        font-size:6px;
+        letter-spacing:1.1px
+    }
+    .nav-actions {
+        gap:11px
+    }
+    .nav-inner {
+        height:68px
+    }
+    .home-hero,.hero-container {
+        min-height:600px
+    }
+    .hero-copy {
+        padding-top:48px
+    }
+    .hero-copy h1 {
+        font-size:54px
+    }
+    .hero-copy>p {
+        font-size:13px
+    }
+    .hero-actions .btn {
+        width:100%
+    }
+    .hero-trust {
+        margin-top:38px
+    }
+    .hero-bottom-detail span:first-child {
+        display:none
+    }
+    .marquee-content {
+        font-size:8px;
+        overflow:hidden;
+        justify-content:center
+    }
+    .marquee-content span:nth-child(n+3) {
+        display:none
+    }
+    .section-heading h2 {
+        font-size:36px
+    }
+    .section-heading-row {
+        display:block
+    }
+    .section-heading-row .text-link {
+        margin-top:22px
+    }
+    .story-visual {
+        min-height:365px
+    }
+    .story-img {
+        height:340px
+    }
+    .story-seal {
+        width:105px;
+        height:105px;
+        font-size:8px;
+        right:5px
+    }
+    .story-img-small {
+        height:125px
+    }
+    .story-points {
+        grid-template-columns:1fr
+    }
+    .food-grid {
+        grid-template-columns:1fr;
+        max-width:450px;
+        margin:auto
+    }
+    .food-image-wrap {
+        height:260px
+    }
+    .feature-inner {
+        gap:35px
+    }
+    .feature-icons {
+        border-left:0;
+        border-top:1px solid #ffffff35;
+        padding:35px 0 0
+    }
+    .gallery-preview {
+        grid-template-columns:1fr 1fr;
+        grid-template-rows:180px 180px
+    }
+    .gallery-preview-item.preview-0 {
+        grid-row:span 2
+    }
+    .gallery-preview-item.preview-3 {
+        grid-column:1/-1
+    }
+    .gallery-preview-item.preview-2 {
+        display:none
+    }
+    .gallery-grid {
+        grid-template-columns:1fr 1fr;
+        gap:10px
+    }
+    .gallery-tile,.gallery-tile:nth-child(5n+1) {
+        height:185px
+    }
+    .gallery-tile span {
+        font-size:14px;
+        left:12px
+    }
+    .review-grid,.values-grid {
+        grid-template-columns:1fr
+    }
+    .review-card p {
+        min-height:auto
+    }
+    .cta-inner {
+        flex-direction:column;
+        align-items:start
+    }
+    .footer {
+        padding-top:55px
+    }
+    .footer-grid {
+        gap:35px 24px;
+        grid-template-columns:1fr 1fr
+    }
+    .footer-grid>div:first-child,.footer-grid>div:last-child {
+        grid-column:span 2
+    }
+    .footer-bottom {
+        flex-direction:column;
+        gap:12px;
+        text-align:center
+    }
+    .page-hero {
+        height:280px
+    }
+    .page-hero h1 {
+        font-size:45px
+    }
+    .booking-card,.contact-form-card {
+        padding:24px
+    }
+    .form-row {
+        grid-template-columns:1fr
+    }
+    .cart-layout,.checkout-layout,.account-layout {
+        grid-template-columns:1fr
+    }
+    .cart-items,.summary-card,.checkout-panel,.account-panel,.account-sidebar {
+        padding:23px
+    }
+    .cart-item {
+        gap:13px
+    }
+    .cart-item img {
+        width:72px;
+        height:78px
+    }
+    .cart-item-details h4 {
+        font-size:15px
+    }
+    .cart-item-end strong {
+        font-size:12px
+    }
+    .account-sidebar nav {
+        flex-direction:row;
+        overflow:auto
+    }
+    .account-sidebar nav a,.account-sidebar nav button {
+        font-size:10px;
+        white-space:nowrap
+    }
+    .booking-history-meta {
+        gap:11px
+    }
+    .auth-side {
+        min-height:240px
+    }
+    .auth-panel {
+        padding:25px 25px 60px
+    }
+    .auth-form-box h1 {
+        font-size:36px
+    }
+    .admin-main {
+        padding:23px 15px 45px
+    }
+    .admin-topbar {
+        padding:0 15px
+    }
+    .admin-topbar-label {
+        display:none
+    }
+    .admin-topbar-right strong {
+        font-size:11px
+    }
+    .admin-heading {
+        align-items:start;
+        flex-direction:column
+    }
+    .admin-heading h1 {
+        font-size:25px
+    }
+    .admin-stats {
+        grid-template-columns:1fr 1fr;
+        gap:10px
+    }
+    .stat-card {
+        padding:15px;
+        min-height:100px;
+        gap:9px
+    }
+    .stat-icon {
+        height:38px;
+        width:38px
+    }
+    .stat-card strong {
+        font-size:20px
+    }
+    .stat-card small {
+        font-size:9px
+    }
+    .admin-card-head {
+        flex-wrap:wrap
+    }
+    .admin-search input {
+        width:130px
+    }
+    .content-card-grid,.admin-settings-grid {
+        grid-template-columns:1fr
+    }
+    .admin-modal {
+        padding:18px
+    }
+    .hours-setting-row>strong {
+        width:100%
+    }
+}
+@media(max-width:420px) {
+    .brand-copy strong {
+        font-size:15px
+    }
+    .brand-emblem {
+        display:none
+    }
+    .main-nav {
+        top:100%
+    }
+    .nav-actions {
+        gap:7px
+    }
+    .hero-copy h1 {
+        font-size:45px
+    }
+    .food-grid {
+        max-width:100%
+    }
+    .stat-card {
+        display:block
+    }
+    .stat-icon {
+        margin-bottom:10px
+    }
+    .checkout-layout,.cart-layout {
+        display:block
+    }
+    .cart-item-details h4 {
+        font-size:14px
+    }
+    .fulfillment-options {
+        grid-template-columns:1fr
+    }
+    .footer-grid {
+        grid-template-columns:1fr
+    }
+    .footer-grid>div:first-child,.footer-grid>div:last-child {
+        grid-column:auto
+    }
+}
