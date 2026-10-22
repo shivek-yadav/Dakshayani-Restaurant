@@ -25,7 +25,7 @@ app.disable('x-powered-by');
 
 // Define allowed frontend origins BEFORE using them.
 const origins = [
-  'https://dakshayani-restaurant-mn1k.vercel.app',
+  'https://dakshayani-restaurant-xi.vercel.app/',
   'http://localhost:5173',
 ];
 
