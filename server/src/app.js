@@ -25,9 +25,18 @@ app.disable('x-powered-by');
 
 // Define allowed frontend origins BEFORE using them.
 const origins = [
-  'https://dakshayani-restaurant-xi.vercel.app/',
+  'https://dakshayani-restaurant-xi.vercel.app',
+  'https://dakshayani-restaurant-krvpevjyz-shivek-yadav.vercel.app',
+  'https://dakshayani-restaurant-mn1k.vercel.app',
   'http://localhost:5173',
 ];
+
+app.use(cors({
+  origin: origins,
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 
 // Security middleware
 app.use(
@@ -36,25 +45,6 @@ app.use(
   })
 );
 
-// Use ONE CORS configuration only.
-app.use(
-  cors({
-    origin: origins,
-    credentials: true,
-    methods: [
-      'GET',
-      'POST',
-      'PUT',
-      'PATCH',
-      'DELETE',
-      'OPTIONS',
-    ],
-    allowedHeaders: [
-      'Content-Type',
-      'Authorization',
-    ],
-  })
-);
 
 // Body and cookie parsing
 app.use(express.json({ limit: '1mb' }));
